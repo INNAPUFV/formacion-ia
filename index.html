@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- No indexar en buscadores -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Espacio de Formación Permanente en IA · UFV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600;700&family=Playfair+Display:wght@400;500&family=Roboto+Slab:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/ufv.css">
+</head>
+<body>
+<header class="nav">
+  <div class="container">
+    <img src="assets/logo-ufv.png" alt="Universidad Francisco de Vitoria">
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Formación docente · UFV</p>
+      <h1>Espacio de Formación Permanente en IA para docentes</h1>
+      <p class="sub">Un espacio para encontrar formación, recursos y experiencias que te ayuden a integrar la inteligencia artificial con criterio y sentido educativo.</p>
+    </div>
+  </section>
+
+  <section class="ambitos">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Cinco ámbitos de formación</p>
+        <h2>¿Qué te vas a encontrar?</h2>
+        <p class="lead">Cinco ámbitos para ayudarte a integrar la IA en tu docencia: comprenderla, adoptar las herramientas de Gemini, inspirarte en experiencias UFV, repensar la evaluación y acompañar a tus alumnos.</p>
+      </div>
+      <div class="grid">
+      <a class="amb" href="#" data-enlace="ambito-01" target="_top">
+        <span class="amb-title">Comprender la IA y utilizarla con criterio</span>
+        <span class="amb-link">Ver recursos <span aria-hidden="true">›</span></span>
+      </a>
+      <a class="amb" href="#" data-enlace="ambito-02" target="_top">
+        <span class="amb-title">Adopción de herramientas Gemini</span>
+        <span class="amb-link">Ver recursos <span aria-hidden="true">›</span></span>
+      </a>
+      <a class="amb" href="#" data-enlace="ambito-03" target="_top">
+        <span class="amb-title">Explorar experiencias de uso UFV con Gemini</span>
+        <span class="amb-link">Ver recursos <span aria-hidden="true">›</span></span>
+      </a>
+      <a class="amb" href="#" data-enlace="ambito-04" target="_top">
+        <span class="amb-title">Evaluar en tiempos de IA</span>
+        <span class="amb-link">Ver recursos <span aria-hidden="true">›</span></span>
+      </a>
+      <a class="amb" href="#" data-enlace="ambito-05" target="_top">
+        <span class="amb-title">Acompañar a mis alumnos</span>
+        <span class="amb-link">Ver recursos <span aria-hidden="true">›</span></span>
+      </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="container">Universidad Francisco de Vitoria · 2026</div></footer>
+
+<script>
+/* ENLACES A CANVAS
+   Pega aquí la URL de cada página de Canvas. Los enlaces se abren en la
+   ventana completa de Canvas (target="_top"), no dentro del iframe.
+   Mientras una URL esté vacía, su tarjeta no navega. */
+const ENLACES = {
+  "ambito-01": "",  // Comprender la IA y utilizarla con criterio
+  "ambito-02": "",  // Adopción de herramientas Gemini
+  "ambito-03": "",  // Explorar experiencias de uso UFV con Gemini
+  "ambito-04": "",  // Evaluar en tiempos de IA
+  "ambito-05": ""   // Acompañar a mis alumnos
+};
+document.querySelectorAll('[data-enlace]').forEach(a => {
+  const url = ENLACES[a.dataset.enlace];
+  if (url) { a.href = url; a.rel = "noopener"; }
+  else { a.addEventListener('click', e => e.preventDefault()); a.setAttribute('aria-disabled','true'); }
+});
+</script>
+</body>
+</html>
