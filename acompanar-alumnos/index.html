@@ -60,9 +60,9 @@
    Mientras una URL esté vacía, su tarjeta no navega ("Próximamente"). */
 const ENLACES = {
   "inicio": "",  // Volver al Espacio de Formación (portada en Canvas)
-  "recurso-01": "",  // La Red SubterranIA
-  "recurso-02": "",  // Acciones necesarias
-  "recurso-03": ""  // ¿Qué piensan los alumnos sobre la IA?
+  "recurso-01": "https://ufv-es.instructure.com/courses/44179/pages/la-red-subterrania",  // La Red SubterranIA
+  "recurso-02": "https://ufv-es.instructure.com/courses/44179/pages/acciones-necesarias",  // Acciones necesarias
+  "recurso-03": "https://ufv-es.instructure.com/courses/44179/pages/que-piensan-los-alumnos-sobre-la-ia"  // ¿Qué piensan los alumnos sobre la IA?
 };
 document.querySelectorAll('[data-enlace]').forEach(a => {
   const url = ENLACES[a.dataset.enlace];
