@@ -10,6 +10,7 @@ Se publican con GitHub Pages en `https://innapufv.github.io/formacion-ia/`.
 - `experiencias-uso/` · 03 Explorar experiencias de uso UFV con Gemini
 - `evaluacion-ia/` · 04 Evaluación UFV en tiempos de IA
 - `acompanar-alumnos/` · 05 Acompañar a mis alumnos
+- `ia-ola-o-tsunami/` · Recurso del ámbito 01: conferencia «IA: ¿Ola o Tsunami?» (vídeo de YouTube)
 - `assets/ufv.css`: estilos compartidos (kit web UFV).
 - `assets/logo-ufv.png`: logo.
 
