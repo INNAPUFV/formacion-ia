@@ -50,7 +50,7 @@ a:focus-visible{outline:3px solid var(--ufv-accent); outline-offset:3px}
 .amb:hover{transform:translateY(-4px); border-color:var(--ufv-sky); background:var(--card-hover); box-shadow:var(--shadow-card)}
 .amb-head{display:flex; align-items:flex-start; gap:16px; margin-bottom:22px}
 .amb-num{flex:none; font-family:var(--font-title); font-weight:600; font-size:2.1rem; line-height:1; color:var(--ufv-primary);
-  padding-bottom:8px; border-bottom:3px solid var(--ufv-sky); font-variant-numeric:lining-nums}
+  padding-bottom:8px; border-bottom:3px solid var(--ufv-sky)}
 .amb-title{padding-top:2px; font-family:var(--font-title); font-weight:500; font-size:1.4rem; line-height:1.15; color:var(--heading); min-width:0}
 .amb-link{margin-top:auto; display:inline-flex; align-items:center; gap:7px; font-weight:600; font-size:.9rem; color:var(--ufv-primary)}
 .amb-link svg{width:15px; height:15px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; transition:transform .2s}
