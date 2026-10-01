@@ -15,3 +15,4 @@ Se publican con GitHub Pages en `https://innapufv.github.io/formacion-ia/`.
 - El estilo sigue la guía web UFV; si una maqueta se aparta de ella, prima la guía.
 - Cada vez que cambie `assets/ufv.css`, se actualiza el parámetro `?v=` del enlace a la hoja de estilos en todas las páginas para que los navegadores no usen la versión en caché.
 - Diseño pensado para el ancho de una página de Canvas (unos 800–1000 px) y para que de un vistazo se vean el hero y las tarjetas: hero compacto, cabecera no fija y espaciados reducidos respecto al kit web general.
+- Las páginas no llevan cabecera con logo ni pie: dentro de Canvas empiezan directamente en el hero.
