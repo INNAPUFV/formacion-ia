@@ -12,6 +12,7 @@ Se publican con GitHub Pages en `https://innapufv.github.io/formacion-ia/`.
 - `acompanar-alumnos/` · 05 Acompañar a mis alumnos
 - `ia-ola-o-tsunami/` · Recurso del ámbito 01: conferencia «IA: ¿Ola o Tsunami?» (vídeo de YouTube)
 - `educacion-conciencia-razon/` · Recurso del ámbito 01: conferencia de Francesc Torralba (vídeo de YouTube)
+- `ciclo-instituto-newman/` · Recurso del ámbito 01: Ciclo Instituto Newman, dos sesiones (vídeos de YouTube)
 - `assets/ufv.css`: estilos compartidos (kit web UFV).
 - `assets/logo-ufv.png`: logo.
 

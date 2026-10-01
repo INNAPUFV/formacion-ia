@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- No indexar en buscadores -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Ciclo Instituto Newman · UFV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/ufv.css?v=202610010231">
+<style>
+/* Página de recurso con varios vídeos */
+.video-section{padding-block:32px 44px}
+.video-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px}
+.video-card{display:flex; flex-direction:column; min-width:0; background:var(--card); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden}
+.video-frame{position:relative; width:100%; aspect-ratio:16/9; max-width:100%; background:var(--ufv-secondary)}
+.video-frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+.video-body{padding:16px 20px 18px}
+.video-body .rec-desc{margin:0}
+@media (max-width:620px){.video-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div class="container">
+      <a class="back-link" href="#" data-enlace="volver" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Comprender la IA y utilizarla con criterio</a>
+      <p class="eyebrow">Ciclo Horizontes de Razón Abierta</p>
+      <h1>Ciclo Instituto Newman</h1>
+      <p class="sub">IA: ¿Qué queda de lo humano? Dos sesiones con Plácido Domenech y Enrique Ávila.</p>
+    </div>
+  </section>
+
+  <section class="video-section">
+    <div class="container">
+      <div class="video-grid">
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/QH1TITaDBGs" title="IA: ¿Qué queda de lo humano? · Plácido Domenech (1/2)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-body">
+            <p class="rec-cat">Sesión 1 de 2</p>
+            <h2 class="rec-title">IA: ¿Qué queda de lo humano?</h2>
+            <p class="rec-desc">Con Plácido Domenech</p>
+          </div>
+        </article>
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/Z5jdRxhg2Y4" title="IA: ¿Qué queda de lo humano? · Enrique Ávila (2/2)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-body">
+            <p class="rec-cat">Sesión 2 de 2</p>
+            <h2 class="rec-title">IA: ¿Qué queda de lo humano?</h2>
+            <p class="rec-desc">Con Enrique Ávila</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+/* ENLACES · las páginas de Canvas se abren en la ventana completa */
+const ENLACES = {
+  "volver": "https://ufv-es.instructure.com/courses/44179/pages/01-comprender-la-ia-y-utilizarla-con-criterio"  // 01 Comprender la IA y utilizarla con criterio
+};
+document.querySelectorAll('[data-enlace]').forEach(a => {
+  const url = ENLACES[a.dataset.enlace];
+  if (url) { a.href = url; a.target = "_top"; a.hidden = false; }
+});
+</script>
+</body>
+</html>
