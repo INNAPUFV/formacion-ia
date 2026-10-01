@@ -118,3 +118,21 @@ a.rec:hover .rec-link svg{transform:translateX(3px)}
   .recursos{padding-block:28px 36px}
 }
 @media (prefers-reduced-motion:reduce){.rec,.rec-link svg,.back-link svg{transition:none} a.rec:hover{transform:none}}
+
+/* =====================================================================
+   BANNER DE AYUDA (mismo modelo que el de la guía de evaluación)
+   ===================================================================== */
+.ayuda{padding-block:0 48px}
+.contact{position:relative; overflow:hidden; color:#fff; border-radius:var(--radius); padding:44px 36px; text-align:center; background:var(--ufv-secondary)}
+.contact::before{content:""; position:absolute; inset:0; z-index:0; background:url('contacto.jpg') center/cover no-repeat}
+.contact::after{content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(135deg, rgba(0,26,51,.90), rgba(0,56,101,.80))}
+.contact > *{position:relative; z-index:2}
+.contact .eyebrow{color:var(--ufv-sky)}
+.contact h2{font-family:var(--font-title); font-weight:400; font-size:clamp(1.6rem,3vw,2.1rem); line-height:1.15; color:#fff; margin:0 0 .35em}
+.contact p{color:var(--on-dark); max-width:52ch; margin:0 auto 1.4em; font-size:1.02rem; line-height:1.6}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:13px 26px; border:1.5px solid transparent; border-radius:999px;
+  font-family:var(--font-body); font-size:.92rem; font-weight:600; line-height:1.2; text-decoration:none; cursor:pointer; transition:background .18s;
+  background:var(--ufv-primary); color:#fff}
+.btn.accent{background:var(--ufv-accent)}
+.btn.accent:hover{background:#b01d4c}
+@media (max-width:620px){.contact{padding:32px 20px} .ayuda{padding-block:0 36px}}

@@ -17,6 +17,7 @@ Se publican con GitHub Pages en `https://innapufv.github.io/formacion-ia/`.
 - `ciclo-instituto-newman/` · Recurso del ámbito 01: Ciclo Instituto Newman, dos sesiones (vídeos de YouTube)
 - `assets/ufv.css`: estilos compartidos (kit web UFV).
 - `assets/logo-ufv.png`: logo.
+- `assets/contacto.jpg`: foto de fondo del banner de ayuda (la misma de la guía de evaluación).
 
 ## Normas
 - Todas las páginas llevan `<meta name="robots" content="noindex, nofollow, …">` para que no se indexen en buscadores.
