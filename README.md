@@ -10,7 +10,7 @@ Se publican con GitHub Pages en `https://innapufv.github.io/formacion-ia/`.
 - `experiencias-uso/` · 03 Explorar experiencias de uso UFV con Gemini
 - `evaluacion-ia/` · 04 Evaluación UFV en tiempos de IA (guía práctica completa, integrada tal cual; autocontenida, no usa assets/ufv.css)
 - `acompanar-alumnos/` · 05 Acompañar a mis alumnos
-- `ia-is-in-the-air/` · Recurso del ámbito 01: ciclo de webinars IA is in the AIr (3 vídeos de Kaltura con texto)
+- `ia-is-in-the-air/` · Recurso del ámbito 01: ciclo de webinars IA is in the AIr (3 vídeos de Kaltura en pestañas)
 - `ia-ola-o-tsunami/` · Recurso del ámbito 01: conferencia «IA: ¿Ola o Tsunami?» (vídeo de YouTube)
 - `educacion-conciencia-razon/` · Recurso del ámbito 01: conferencia de Francesc Torralba (vídeo de YouTube)
 - `red-subterrania/` · Recurso del ámbito 05: La Red SubterranIA (vídeo de Kaltura + texto)
