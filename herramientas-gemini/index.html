@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- No indexar en buscadores -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>02 · Adopción de herramientas de Gemini · UFV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/ufv.css?v=202610010231">
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div class="container">
+      <a class="back-link" href="#" data-enlace="inicio" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Espacio de Formación en IA</a>
+      <div class="hero-head">
+        <span class="hero-num" aria-hidden="true">02</span>
+        <h1>Adopción de herramientas de Gemini</h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="recursos">
+    <div class="container">
+
+      <div class="rec-grid">
+        <a class="rec" href="#" data-enlace="recurso-01">
+          <p class="rec-cat">Herramientas</p>
+          <h2 class="rec-title">Herramientas Gemini</h2>
+          <p class="rec-desc">Recursos y formación para conocer y utilizar las herramientas Gemini disponibles en la UFV.</p>
+          <span class="rec-link">Abrir recurso <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="rec" href="#" data-enlace="recurso-02">
+          <p class="rec-cat">Formación</p>
+          <h2 class="rec-title">ED Trainer</h2>
+          <p class="rec-desc">Formación específica de Education Trainer para la adopción de herramientas.</p>
+          <span class="rec-link">Abrir recurso <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+/* ENLACES
+   Pega aquí la URL de cada recurso. Las páginas de Canvas se abren en la
+   ventana completa (target="_top"); los enlaces externos, en una pestaña nueva.
+   Mientras una URL esté vacía, su tarjeta no navega ("Próximamente"). */
+const ENLACES = {
+  "inicio": "",  // Volver al Espacio de Formación (portada en Canvas)
+  "recurso-01": "",  // Herramientas Gemini
+  "recurso-02": ""  // ED Trainer
+};
+document.querySelectorAll('[data-enlace]').forEach(a => {
+  const url = ENLACES[a.dataset.enlace];
+  if (url) {
+    a.href = url;
+    a.target = /instructure\.com/.test(url) ? "_top" : "_blank";
+    a.rel = "noopener";
+    a.hidden = false;
+  } else {
+    a.addEventListener('click', e => e.preventDefault());
+    a.setAttribute('aria-disabled', 'true');
+    const l = a.querySelector('.rec-link');
+    if (l) l.textContent = 'Próximamente';
+  }
+});
+</script>
+</body>
+</html>

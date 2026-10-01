@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- No indexar en buscadores -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>03 · Explorar experiencias de uso UFV con Gemini · UFV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/ufv.css?v=202610010231">
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div class="container">
+      <a class="back-link" href="#" data-enlace="inicio" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Espacio de Formación en IA</a>
+      <div class="hero-head">
+        <span class="hero-num" aria-hidden="true">03</span>
+        <h1>Explorar experiencias de uso UFV con Gemini</h1>
+      </div>
+      <p class="sub">Experiencias reales de profesores UFV que utilizan Gemini en sus asignaturas, integrando la IA al servicio del aprendizaje y de nuestro modelo formativo.</p>
+    </div>
+  </section>
+
+  <section class="recursos">
+    <div class="container">
+      <p class="intro">Conoce cómo lo hacen, paso a paso, e inspírate para adaptarlo a tu propia docencia.</p>
+      <div class="rec-grid">
+        <div class="rec soon">
+          <p class="rec-cat">Experiencia de uso UFV</p>
+          <h2 class="rec-title">Próximamente</h2>
+        </div>
+        <div class="rec soon">
+          <p class="rec-cat">Experiencia de uso UFV</p>
+          <h2 class="rec-title">Próximamente</h2>
+        </div>
+        <div class="rec soon">
+          <p class="rec-cat">Experiencia de uso UFV</p>
+          <h2 class="rec-title">Próximamente</h2>
+        </div>
+        <div class="rec soon">
+          <p class="rec-cat">Experiencia de uso UFV</p>
+          <h2 class="rec-title">Próximamente</h2>
+        </div>
+        <div class="rec soon">
+          <p class="rec-cat">Experiencia de uso UFV</p>
+          <h2 class="rec-title">Próximamente</h2>
+        </div>
+        <div class="rec soon">
+          <p class="rec-cat">Experiencia de uso UFV</p>
+          <h2 class="rec-title">Próximamente</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+/* ENLACES
+   Pega aquí la URL de cada recurso. Las páginas de Canvas se abren en la
+   ventana completa (target="_top"); los enlaces externos, en una pestaña nueva.
+   Mientras una URL esté vacía, su tarjeta no navega ("Próximamente"). */
+const ENLACES = {
+  "inicio": ""  // Volver al Espacio de Formación (portada en Canvas)
+};
+document.querySelectorAll('[data-enlace]').forEach(a => {
+  const url = ENLACES[a.dataset.enlace];
+  if (url) {
+    a.href = url;
+    a.target = /instructure\.com/.test(url) ? "_top" : "_blank";
+    a.rel = "noopener";
+    a.hidden = false;
+  } else {
+    a.addEventListener('click', e => e.preventDefault());
+    a.setAttribute('aria-disabled', 'true');
+    const l = a.querySelector('.rec-link');
+    if (l) l.textContent = 'Próximamente';
+  }
+});
+</script>
+</body>
+</html>

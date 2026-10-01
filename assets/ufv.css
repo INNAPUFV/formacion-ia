@@ -70,3 +70,51 @@ footer{border-top:1px solid var(--line); padding-block:16px; color:var(--muted);
   .ambitos{padding-block:32px 40px}
 }
 @media (prefers-reduced-motion:reduce){.amb,.amb-link svg{transition:none} .amb:hover{transform:none}}
+
+/* =====================================================================
+   PÁGINAS DE ÁMBITO
+   ===================================================================== */
+/* Enlace de vuelta a la portada (solo aparece si tiene URL en ENLACES) */
+.back-link{display:inline-flex; align-items:center; gap:7px; margin:0 0 18px; font-size:.86rem; font-weight:600; color:var(--on-dark); text-decoration:none}
+.back-link svg{width:15px; height:15px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; transition:transform .2s}
+.back-link:hover{color:#fff}
+.back-link:hover svg{transform:translateX(-3px)}
+.back-link[hidden]{display:none}
+
+/* Cabecera del ámbito: número con subrayado celeste + título, como en las tarjetas de la portada */
+.hero-head{display:flex; align-items:flex-start; gap:18px}
+.hero-num{flex:none; font-family:var(--font-title); font-weight:600; font-size:clamp(2rem,4vw,2.6rem); line-height:1; color:#fff;
+  padding-bottom:8px; border-bottom:3px solid var(--ufv-sky); margin-top:.08em}
+.hero-head h1{margin:0; max-width:30ch}
+.hero .hero-head + p.sub{margin-top:16px}
+
+/* Lista de recursos */
+.recursos{padding-block:36px 48px}
+.recursos .intro{color:var(--muted); font-size:1.02rem; line-height:1.6; max-width:72ch; margin:0 0 24px}
+.rec-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px}
+.rec{display:flex; flex-direction:column; padding:20px 22px; background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  text-decoration:none; color:inherit; transition:transform .2s,border-color .2s,box-shadow .2s,background .2s}
+a.rec:hover{transform:translateY(-4px); border-color:var(--ufv-sky); background:var(--card-hover); box-shadow:var(--shadow-card)}
+.rec-cat{font-family:var(--font-slab); font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--ufv-accent); margin:0 0 8px}
+.rec-title{font-family:var(--font-title); font-weight:500; font-size:1.2rem; line-height:1.2; color:var(--heading); margin:0 0 8px}
+.rec-desc{font-size:.92rem; line-height:1.55; color:var(--muted); margin:0 0 16px}
+.rec-link{margin-top:auto; display:inline-flex; align-items:center; gap:7px; font-weight:600; font-size:.9rem; color:var(--ufv-primary)}
+.rec-link svg{width:15px; height:15px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; transition:transform .2s}
+a.rec:hover .rec-link{color:var(--ufv-sky)}
+a.rec:hover .rec-link svg{transform:translateX(3px)}
+/* Recurso aún sin enlace */
+.rec[aria-disabled="true"] .rec-link{color:var(--muted); font-weight:400}
+.rec[aria-disabled="true"] .rec-link svg{display:none}
+/* Hueco reservado para contenidos que aún no existen */
+.rec.soon{background:transparent; border-style:dashed; min-height:120px}
+.rec.soon .rec-title{color:var(--muted); font-size:1.05rem}
+.empty-note{border-left:4px solid var(--ufv-accent); background:#eef3fa; padding:16px 20px; border-radius:0 12px 12px 0; font-size:.98rem; color:var(--fg); max-width:72ch}
+.empty-note strong{color:var(--ufv-primary)}
+
+@media (max-width:760px){.rec-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){
+  .rec-grid{grid-template-columns:1fr}
+  .hero-head{gap:14px}
+  .recursos{padding-block:28px 36px}
+}
+@media (prefers-reduced-motion:reduce){.rec,.rec-link svg,.back-link svg{transition:none} a.rec:hover{transform:none}}

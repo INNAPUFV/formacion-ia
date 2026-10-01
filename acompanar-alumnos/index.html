@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- No indexar en buscadores -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>05 · Acompañar a mis alumnos · UFV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/ufv.css?v=202610010231">
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div class="container">
+      <a class="back-link" href="#" data-enlace="inicio" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Espacio de Formación en IA</a>
+      <div class="hero-head">
+        <span class="hero-num" aria-hidden="true">05</span>
+        <h1>Acompañar a mis alumnos</h1>
+      </div>
+      <p class="sub">Recursos para orientar su aprendizaje y ayudarles a utilizar la IA con criterio.</p>
+    </div>
+  </section>
+
+  <section class="recursos">
+    <div class="container">
+
+      <div class="rec-grid">
+        <a class="rec" href="#" data-enlace="recurso-01">
+          <p class="rec-cat">Curso para alumnos</p>
+          <h2 class="rec-title">La Red SubterranIA</h2>
+          <p class="rec-desc">Qué formación reciben los estudiantes de grado y FP sobre fundamentos, herramientas y uso con sentido.</p>
+          <span class="rec-link">Abrir recurso <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="rec" href="#" data-enlace="recurso-02">
+          <p class="rec-cat">Consejos</p>
+          <h2 class="rec-title">Acciones necesarias</h2>
+          <p class="rec-desc">Acciones que has de tener en cuenta con tus alumnos.</p>
+          <span class="rec-link">Abrir recurso <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="rec" href="#" data-enlace="recurso-03">
+          <p class="rec-cat">Escucha</p>
+          <h2 class="rec-title">¿Qué piensan los alumnos sobre la IA?</h2>
+          <p class="rec-desc">Resultados del World Café con alumnos.</p>
+          <span class="rec-link">Abrir recurso <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+/* ENLACES
+   Pega aquí la URL de cada recurso. Las páginas de Canvas se abren en la
+   ventana completa (target="_top"); los enlaces externos, en una pestaña nueva.
+   Mientras una URL esté vacía, su tarjeta no navega ("Próximamente"). */
+const ENLACES = {
+  "inicio": "",  // Volver al Espacio de Formación (portada en Canvas)
+  "recurso-01": "",  // La Red SubterranIA
+  "recurso-02": "",  // Acciones necesarias
+  "recurso-03": ""  // ¿Qué piensan los alumnos sobre la IA?
+};
+document.querySelectorAll('[data-enlace]').forEach(a => {
+  const url = ENLACES[a.dataset.enlace];
+  if (url) {
+    a.href = url;
+    a.target = /instructure\.com/.test(url) ? "_top" : "_blank";
+    a.rel = "noopener";
+    a.hidden = false;
+  } else {
+    a.addEventListener('click', e => e.preventDefault());
+    a.setAttribute('aria-disabled', 'true');
+    const l = a.querySelector('.rec-link');
+    if (l) l.textContent = 'Próximamente';
+  }
+});
+</script>
+</body>
+</html>
