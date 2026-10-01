@@ -8,7 +8,7 @@ Se publican con GitHub Pages en `https://innapufv.github.io/formacion-ia/`.
 - `comprender-ia/` · 01 Comprender la IA y utilizarla con criterio
 - `herramientas-gemini/` · 02 Adopción de herramientas de Gemini
 - `experiencias-uso/` · 03 Explorar experiencias de uso UFV con Gemini
-- `evaluacion-ia/` · 04 Evaluación UFV en tiempos de IA
+- `evaluacion-ia/` · 04 Evaluación UFV en tiempos de IA (guía práctica completa, integrada tal cual; autocontenida, no usa assets/ufv.css)
 - `acompanar-alumnos/` · 05 Acompañar a mis alumnos
 - `ia-ola-o-tsunami/` · Recurso del ámbito 01: conferencia «IA: ¿Ola o Tsunami?» (vídeo de YouTube)
 - `educacion-conciencia-razon/` · Recurso del ámbito 01: conferencia de Francesc Torralba (vídeo de YouTube)
