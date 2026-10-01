@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- No indexar en buscadores -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Adopción de herramientas Gemini · UFV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/ufv.css?v=202610010231">
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div class="container">
+      <a class="back-link" href="#" data-enlace="volver" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Adopción de herramientas de Gemini</a>
+      <p class="eyebrow">Herramientas</p>
+      <h1>Adopción de herramientas Gemini</h1>
+      <p class="sub">Recursos y formación para conocer y utilizar las herramientas Gemini disponibles en la UFV.</p>
+    </div>
+  </section>
+
+  <section class="recursos">
+    <div class="container">
+      <!-- CONTENIDO: pendiente de recibir -->
+      <p class="empty-note"><strong>Contenidos en preparación.</strong> Muy pronto encontrarás aquí todo lo necesario para empezar a utilizar las herramientas Gemini en tu docencia.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+/* ENLACES · las páginas de Canvas se abren en la ventana completa */
+const ENLACES = {
+  "volver": "https://ufv-es.instructure.com/courses/44179/pages/02-adopcion-de-herramientas-de-gemini"  // 02 Adopción de herramientas de Gemini
+};
+document.querySelectorAll('[data-enlace]').forEach(a => {
+  const url = ENLACES[a.dataset.enlace];
+  if (url) { a.href = url; a.target = "_top"; a.hidden = false; }
+});
+</script>
+</body>
+</html>
