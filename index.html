@@ -26,9 +26,9 @@
   <section class="ambitos">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow">Seis ámbitos de formación</p>
+        <p class="eyebrow">Cinco ámbitos de formación</p>
         <h2>¿Qué te vas a encontrar?</h2>
-        <p class="lead">Seis ámbitos para ayudarte a integrar la IA en tu docencia: comprenderla, conocer las herramientas disponibles, diseñar actividades y experiencias de aprendizaje, repensar la evaluación, acompañar a tus alumnos y explorar experiencias de uso.</p>
+        <p class="lead">Cinco ámbitos para ayudarte a integrar la IA en tu docencia: comprenderla, adoptar las herramientas de Gemini, inspirarte en experiencias UFV, repensar la evaluación y acompañar a tus alumnos.</p>
       </div>
       <div class="grid">
       <a class="amb" href="#" data-enlace="ambito-01" target="_top">
@@ -41,35 +41,28 @@
       <a class="amb" href="#" data-enlace="ambito-02" target="_top">
         <span class="amb-head">
           <span class="amb-num" aria-hidden="true">02</span>
-          <span class="amb-title">Conocer las herramientas IA disponibles</span>
+          <span class="amb-title">Adopción de herramientas Gemini</span>
         </span>
         <span class="amb-link">Ver recursos <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
       <a class="amb" href="#" data-enlace="ambito-03" target="_top">
         <span class="amb-head">
           <span class="amb-num" aria-hidden="true">03</span>
-          <span class="amb-title">Formación para diseñar actividades y experiencias de aprendizaje</span>
+          <span class="amb-title">Explorar experiencias de uso UFV con Gemini</span>
         </span>
         <span class="amb-link">Ver recursos <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
       <a class="amb" href="#" data-enlace="ambito-04" target="_top">
         <span class="amb-head">
           <span class="amb-num" aria-hidden="true">04</span>
-          <span class="amb-title">Evaluación UFV en tiempos de IA</span>
+          <span class="amb-title">Evaluar en tiempos de IA</span>
         </span>
         <span class="amb-link">Ver recursos <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
       <a class="amb" href="#" data-enlace="ambito-05" target="_top">
         <span class="amb-head">
           <span class="amb-num" aria-hidden="true">05</span>
-          <span class="amb-title">Acompañar a los alumnos</span>
-        </span>
-        <span class="amb-link">Ver recursos <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="amb" href="#" data-enlace="ambito-06" target="_top">
-        <span class="amb-head">
-          <span class="amb-num" aria-hidden="true">06</span>
-          <span class="amb-title">Explorar experiencias de uso</span>
+          <span class="amb-title">Acompañar a mis alumnos</span>
         </span>
         <span class="amb-link">Ver recursos <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
@@ -85,11 +78,10 @@
    Mientras una URL esté vacía, su tarjeta no navega. */
 const ENLACES = {
   "ambito-01": "https://ufv-es.instructure.com/courses/44179/pages/01-comprender-la-ia-y-utilizarla-con-criterio",  // Comprender la IA y utilizarla con criterio
-  "ambito-02": "https://ufv-es.instructure.com/courses/44179/pages/02-conocer-las-herramientas-ia-disponibles",  // Conocer las herramientas IA disponibles
-  "ambito-03": "https://ufv-es.instructure.com/courses/44179/pages/03-formacion-para-disenar-actividades-y-experiencias-de-aprendizaje-2",  // Formación para diseñar actividades y experiencias de aprendizaje
-  "ambito-04": "https://ufv-es.instructure.com/courses/44179/pages/04-evaluacion-ufv-en-tiempos-de-ia",  // Evaluación UFV en tiempos de IA
-  "ambito-05": "https://ufv-es.instructure.com/courses/44179/pages/05-acompanar-a-los-alumnos",  // Acompañar a los alumnos
-  "ambito-06": "https://ufv-es.instructure.com/courses/44179/pages/06-explorar-experiencias-de-uso"  // Explorar experiencias de uso
+  "ambito-02": "https://ufv-es.instructure.com/courses/44179/pages/02-conocer-las-herramientas-ia-disponibles",  // Adopción de herramientas Gemini
+  "ambito-03": "https://ufv-es.instructure.com/courses/44179/pages/06-explorar-experiencias-de-uso",  // Explorar experiencias de uso UFV con Gemini
+  "ambito-04": "https://ufv-es.instructure.com/courses/44179/pages/04-evaluacion-ufv-en-tiempos-de-ia",  // Evaluar en tiempos de IA
+  "ambito-05": "https://ufv-es.instructure.com/courses/44179/pages/05-acompanar-a-los-alumnos"  // Acompañar a mis alumnos
 };
 document.querySelectorAll('[data-enlace]').forEach(a => {
   const url = ENLACES[a.dataset.enlace];
