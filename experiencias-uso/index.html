@@ -12,6 +12,43 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/ufv.css?v=202610011053">
+<style>
+[hidden]{display:none !important}
+/* Tarjetas de experiencia (abren ficha emergente) */
+button.rec{font:inherit; text-align:left; cursor:pointer; width:100%}
+button.rec:hover{transform:translateY(-4px); border-color:var(--ufv-sky); background:var(--card-hover); box-shadow:var(--shadow-card)}
+button.rec:hover .rec-link{color:var(--ufv-sky)}
+button.rec:hover .rec-link svg{transform:translateX(3px)}
+button.rec:focus-visible{outline:3px solid var(--ufv-accent); outline-offset:2px}
+.rec-meta{margin:0 0 8px; font-size:.84rem; color:var(--muted)}
+.exp-media{display:flex; align-items:center; gap:6px; margin:0 0 14px; font-size:.78rem; color:var(--muted)}
+.exp-media{flex-wrap:wrap}
+.exp-media span{display:inline-flex; align-items:center; gap:5px; white-space:nowrap; padding:3px 9px; border-radius:999px; background:#eef3fa}
+.exp-media svg{width:13px; height:13px; stroke:var(--ufv-primary); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
+
+/* Ficha emergente (modelo del catálogo de herramientas) */
+body.modal-open{overflow:hidden}
+.modal{position:fixed; inset:0; z-index:100; display:none; align-items:flex-start; justify-content:center; padding:16px; background:rgba(0,26,51,.72); overflow:auto}
+.modal.open{display:flex}
+.modal-box{position:relative; width:min(820px,100%); margin:auto 0; border-radius:var(--radius); background:#fff; box-shadow:0 30px 80px rgba(0,0,0,.3); overflow:hidden}
+.modal-head{padding:22px 28px 18px; background:var(--ufv-secondary); color:#fff}
+.modal-head .cat{margin:0 0 6px; font-family:var(--font-slab); font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--ufv-sky)}
+.modal-head h2{margin:0; font-family:var(--font-title); font-weight:500; font-size:1.55rem; line-height:1.2; color:#fff; padding-right:44px}
+.modal-head .meta{margin:8px 0 0; color:var(--on-dark); font-size:.9rem}
+.close-modal{position:absolute; top:12px; right:14px; width:38px; height:38px; border:1px solid rgba(255,255,255,.3); border-radius:50%; background:rgba(255,255,255,.08); color:#fff; font-size:1.2rem; line-height:1; cursor:pointer}
+.close-modal:hover{background:rgba(255,255,255,.18)}
+.modal-body{padding:20px 24px 24px}
+.video-frame{position:relative; width:100%; aspect-ratio:16/9; border-radius:12px; overflow:hidden; background:var(--ufv-secondary)}
+.video-frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+.video-soon{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+  background:linear-gradient(135deg,rgba(0,26,51,.98),rgba(0,56,101,.9)); color:var(--on-dark); font-size:.9rem}
+.video-soon svg{width:50px; height:50px; padding:13px; border:1px solid rgba(255,255,255,.45); border-radius:50%; fill:var(--ufv-sky); background:rgba(255,255,255,.08)}
+.exp-text{margin:18px 0 0; font-size:.95rem; line-height:1.65; color:var(--fg); max-width:72ch}
+.exp-text p{margin:0 0 .9em}
+.exp-actions{display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line)}
+.exp-actions .btn svg{width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
+.exp-actions .hint{font-size:.82rem; color:var(--muted)}
+</style>
 </head>
 <body>
 <main>
@@ -28,59 +65,115 @@
 
   <section class="recursos">
     <div class="container">
-      <p class="intro">Conoce cómo lo hacen, paso a paso, e inspírate para adaptarlo a tu propia docencia.</p>
-      <div class="rec-grid">
-        <div class="rec soon">
-          <p class="rec-cat">Experiencia de uso UFV</p>
-          <h2 class="rec-title">Próximamente</h2>
-        </div>
-        <div class="rec soon">
-          <p class="rec-cat">Experiencia de uso UFV</p>
-          <h2 class="rec-title">Próximamente</h2>
-        </div>
-        <div class="rec soon">
-          <p class="rec-cat">Experiencia de uso UFV</p>
-          <h2 class="rec-title">Próximamente</h2>
-        </div>
-        <div class="rec soon">
-          <p class="rec-cat">Experiencia de uso UFV</p>
-          <h2 class="rec-title">Próximamente</h2>
-        </div>
-        <div class="rec soon">
-          <p class="rec-cat">Experiencia de uso UFV</p>
-          <h2 class="rec-title">Próximamente</h2>
-        </div>
-        <div class="rec soon">
-          <p class="rec-cat">Experiencia de uso UFV</p>
-          <h2 class="rec-title">Próximamente</h2>
-        </div>
-      </div>
+      <p class="intro">Conoce cómo lo hacen, paso a paso, e inspírate para adaptarlo a tu propia docencia. Cada experiencia incluye un vídeo tutorial y una ficha escrita.</p>
+      <div class="rec-grid" id="experiencias"></div>
     </div>
   </section>
 </main>
 
+<!-- FICHA EMERGENTE DE EXPERIENCIA -->
+<div class="modal" id="modal-exp" role="dialog" aria-modal="true" aria-labelledby="exp-title">
+  <div class="modal-box">
+    <button class="close-modal" type="button" aria-label="Cerrar">×</button>
+    <div class="modal-head">
+      <p class="cat" id="exp-cat"></p>
+      <h2 id="exp-title"></h2>
+      <p class="meta" id="exp-meta"></p>
+    </div>
+    <div class="modal-body">
+      <div class="video-frame" id="exp-video"></div>
+      <div class="exp-text" id="exp-text"></div>
+      <div class="exp-actions">
+        <a class="btn accent" id="exp-pdf" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg> Ver la ficha completa</a>
+        <span class="hint" id="exp-pdf-hint">La ficha se abre en una pestaña nueva.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
-/* ENLACES
-   Pega aquí la URL de cada recurso. Las páginas de Canvas se abren en la
-   ventana completa (target="_top"); los enlaces externos, en una pestaña nueva.
-   Mientras una URL esté vacía, su tarjeta no navega ("Próximamente"). */
+/* ENLACES · las páginas de Canvas se abren en la ventana completa */
 const ENLACES = {
   "inicio": ""  // Volver al Espacio de Formación (portada en Canvas)
 };
 document.querySelectorAll('[data-enlace]').forEach(a => {
   const url = ENLACES[a.dataset.enlace];
-  if (url) {
-    a.href = url;
-    a.target = /instructure\.com/.test(url) ? "_top" : "_blank";
-    a.rel = "noopener";
-    a.hidden = false;
-  } else {
-    a.addEventListener('click', e => e.preventDefault());
-    a.setAttribute('aria-disabled', 'true');
-    const l = a.querySelector('.rec-link');
-    if (l) l.textContent = 'Próximamente';
-  }
+  if (url) { a.href = url; a.target = "_top"; a.hidden = false; }
 });
+
+/* ============================================================
+   EXPERIENCIAS · rellena cada una con sus datos.
+   - titulo: si está vacío, la tarjeta aparece como «Próximamente».
+   - docente / asignatura: se muestran bajo el título.
+   - resumen: 1–2 frases para la tarjeta.
+   - texto: párrafos para la ficha emergente (lista de cadenas).
+   - video: dirección (src) del iframe de Kaltura / Educamedia / YouTube.
+   - pdf: enlace de Canvas al PDF (vista sin descarga).
+   ============================================================ */
+const EXPERIENCIAS = [
+  { titulo:"", docente:"", asignatura:"", resumen:"", texto:[], video:"", pdf:"" },
+  { titulo:"", docente:"", asignatura:"", resumen:"", texto:[], video:"", pdf:"" },
+  { titulo:"", docente:"", asignatura:"", resumen:"", texto:[], video:"", pdf:"" },
+  { titulo:"", docente:"", asignatura:"", resumen:"", texto:[], video:"", pdf:"" },
+  { titulo:"", docente:"", asignatura:"", resumen:"", texto:[], video:"", pdf:"" },
+  { titulo:"", docente:"", asignatura:"", resumen:"", texto:[], video:"", pdf:"" }
+];
+
+const ICO_VIDEO = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/></svg>';
+const ICO_PDF = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>';
+const ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+const PLAY = '<div class="video-soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg><span>Vídeo tutorial próximamente</span></div>';
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
+const meta = e => [e.docente, e.asignatura].filter(Boolean).join(' · ');
+
+const grid = document.getElementById('experiencias');
+EXPERIENCIAS.forEach((e, i) => {
+  if (!e.titulo) {
+    grid.insertAdjacentHTML('beforeend', '<div class="rec soon"><p class="rec-cat">Experiencia de uso UFV</p><h2 class="rec-title">Próximamente</h2></div>');
+    return;
+  }
+  const media = '<p class="exp-media"><span>' + ICO_VIDEO + 'Vídeo tutorial</span><span>' + ICO_PDF + 'Ficha PDF</span></p>';
+  grid.insertAdjacentHTML('beforeend',
+    '<button class="rec" type="button" data-exp="' + i + '" aria-haspopup="dialog">' +
+      '<p class="rec-cat">Experiencia de uso UFV</p>' +
+      '<h2 class="rec-title">' + esc(e.titulo) + '</h2>' +
+      (meta(e) ? '<p class="rec-meta">' + esc(meta(e)) + '</p>' : '') +
+      (e.resumen ? '<p class="rec-desc">' + esc(e.resumen) + '</p>' : '') +
+      media +
+      '<span class="rec-link">Ver experiencia ' + ARROW + '</span>' +
+    '</button>');
+});
+
+/* Ficha emergente */
+const modal = document.getElementById('modal-exp');
+let ultimo = null;
+function abrir(i){
+  const e = EXPERIENCIAS[i];
+  document.getElementById('exp-cat').textContent = 'Experiencia de uso UFV';
+  document.getElementById('exp-title').textContent = e.titulo;
+  document.getElementById('exp-meta').textContent = meta(e);
+  document.getElementById('exp-meta').hidden = !meta(e);
+  document.getElementById('exp-video').innerHTML = e.video
+    ? '<iframe src="' + esc(e.video) + '" title="Vídeo tutorial: ' + esc(e.titulo) + '" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay *; fullscreen *; encrypted-media *"></iframe>'
+    : PLAY;
+  const txt = (e.texto && e.texto.length ? e.texto : (e.resumen ? [e.resumen] : []));
+  document.getElementById('exp-text').innerHTML = txt.map(p => '<p>' + esc(p) + '</p>').join('');
+  const pdf = document.getElementById('exp-pdf');
+  pdf.hidden = !e.pdf; document.getElementById('exp-pdf-hint').hidden = !e.pdf;
+  if (e.pdf) pdf.href = e.pdf;
+  ultimo = document.activeElement;
+  modal.classList.add('open'); document.body.classList.add('modal-open');
+  modal.querySelector('.close-modal').focus();
+}
+function cerrar(){
+  modal.classList.remove('open'); document.body.classList.remove('modal-open');
+  document.getElementById('exp-video').innerHTML = '';   /* detiene el vídeo */
+  if (ultimo) ultimo.focus();
+}
+grid.addEventListener('click', ev => { const b = ev.target.closest('[data-exp]'); if (b) abrir(+b.dataset.exp); });
+modal.querySelector('.close-modal').addEventListener('click', cerrar);
+modal.addEventListener('click', ev => { if (ev.target === modal) cerrar(); });
+document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && modal.classList.contains('open')) cerrar(); });
 </script>
 </body>
 </html>
