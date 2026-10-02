@@ -106,7 +106,7 @@ document.querySelectorAll('[data-enlace]').forEach(a => {
    EXPERIENCIAS · rellena cada una con sus datos.
    - titulo: si está vacío, la tarjeta aparece como «Próximamente».
    - docente / asignatura: se muestran bajo el título.
-   - grado / facultad (opcionales): segunda línea, más pequeña.
+   - grado / centro (opcionales): segunda línea, más pequeña. En centro va el nombre completo (Facultad de… / Escuela…).
    - resumen: 1–2 frases para la tarjeta.
    - texto: párrafos para la ficha emergente (lista de cadenas).
    - video: dirección (src) del iframe de Kaltura / Educamedia / YouTube.
@@ -114,9 +114,9 @@ document.querySelectorAll('[data-enlace]').forEach(a => {
    ============================================================ */
 const EXPERIENCIAS = [
   { titulo:"Herramientas de Google AI para la investigación", docente:"Andrés García", asignatura:"Investigación", resumen:"", texto:[], video:"", pdf:"https://ufv-es.instructure.com/files/8497037?verifier=fb07bdf2-11f4-477a-b215-c7e525e77e5d" },
-  { titulo:"Gemini para comprender pruebas estadísticas", docente:"Belén Obispo", asignatura:"Análisis de datos en Investigación Psicológica", grado:"Psicología", facultad:"Educación y Psicología", resumen:"", texto:[], video:"", pdf:"https://ufv-es.instructure.com/files/8497038?verifier=6dd57ed1-0ef6-46f1-a07d-419f31b7c274" },
-  { titulo:"Asistente de IA para aprender a redactar noticias", docente:"Javier de la Rosa", asignatura:"Narrativa Periodística I", grado:"Periodismo", facultad:"Comunicación y Humanidades", resumen:"", texto:[], video:"", pdf:"https://ufv-es.instructure.com/files/8497039?verifier=75aa8f55-1b99-46ee-900e-a3dd3588b833" },
-  { titulo:"", docente:"", asignatura:"", resumen:"", texto:[], video:"", pdf:"" },
+  { titulo:"Gemini para comprender pruebas estadísticas", docente:"Belén Obispo", asignatura:"Análisis de datos en Investigación Psicológica", grado:"Psicología", centro:"Facultad de Educación y Psicología", resumen:"", texto:[], video:"", pdf:"https://ufv-es.instructure.com/files/8497038?verifier=6dd57ed1-0ef6-46f1-a07d-419f31b7c274" },
+  { titulo:"Asistente de IA para aprender a redactar noticias", docente:"Javier de la Rosa", asignatura:"Narrativa Periodística I", grado:"Periodismo", centro:"Facultad de Comunicación y Humanidades", resumen:"", texto:[], video:"", pdf:"https://ufv-es.instructure.com/files/8497039?verifier=75aa8f55-1b99-46ee-900e-a3dd3588b833" },
+  { titulo:"Tutor multimodal para documentar proyectos", docente:"Leire Nuere", asignatura:"Gestión del Conocimiento y Habilidades de la Persona", grado:"Ingeniería en Sistemas de Inteligencia Artificial", centro:"Escuela Politécnica Superior", resumen:"", texto:[], video:"", pdf:"https://ufv-es.instructure.com/files/8497040?verifier=f54807ff-96c8-4b61-96f3-27840436797c" },
   { titulo:"", docente:"", asignatura:"", resumen:"", texto:[], video:"", pdf:"" },
   { titulo:"", docente:"", asignatura:"", resumen:"", texto:[], video:"", pdf:"" }
 ];
@@ -127,7 +127,7 @@ const ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 
 const PLAY = '<div class="video-soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg><span>Vídeo tutorial próximamente</span></div>';
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
 const meta = e => [e.docente, e.asignatura].filter(Boolean).join(' · ');
-const meta2 = e => [e.grado && ('Grado en ' + e.grado), e.facultad && ('Facultad de ' + e.facultad)].filter(Boolean).join(' · ');
+const meta2 = e => [e.grado && ('Grado en ' + e.grado), e.centro].filter(Boolean).join(' · ');
 
 const grid = document.getElementById('experiencias');
 EXPERIENCIAS.forEach((e, i) => {
