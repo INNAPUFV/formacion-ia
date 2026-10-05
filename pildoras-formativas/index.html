@@ -15,15 +15,14 @@
 <style>
 [hidden]{display:none !important}
 /* Tarjetas numeradas que abren el vídeo en ficha emergente */
-.grid-pild{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px}
+.grid-pild{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px}
 button.amb{font:inherit; text-align:left; cursor:pointer; width:100%}
 button.amb:focus-visible{outline:3px solid var(--ufv-accent); outline-offset:2px}
 .amb.soon{background:transparent; border-style:dashed; cursor:default}
 .amb.soon:hover{transform:none; box-shadow:none; border-color:var(--line); background:transparent}
 .amb.soon .amb-title{color:var(--muted)}
 .amb-desc{margin:-6px 0 14px; font-size:.88rem; line-height:1.5; color:var(--muted)}
-@media (max-width:760px){.grid-pild{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:520px){.grid-pild{grid-template-columns:1fr}}
+@media (max-width:560px){.grid-pild{grid-template-columns:1fr}}
 
 /* Ficha emergente con el vídeo */
 body.modal-open{overflow:hidden}
@@ -41,6 +40,7 @@ body.modal-open{overflow:hidden}
 .video-frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
 .video-soon{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
   background:linear-gradient(135deg,rgba(0,26,51,.98),rgba(0,56,101,.9)); color:var(--on-dark); font-size:.9rem}
+.video-soon .btn svg{width:16px; height:16px; padding:0; border:0; background:none; fill:none; stroke:currentColor; stroke-width:2}
 .video-soon svg{width:50px; height:50px; padding:13px; border:1px solid rgba(255,255,255,.45); border-radius:50%; fill:var(--ufv-sky); background:rgba(255,255,255,.08)}
 .modal-nav{display:flex; justify-content:space-between; gap:12px; margin-top:16px; padding-top:14px; border-top:1px solid var(--line)}
 .modal-nav button{font:inherit; font-size:.88rem; font-weight:600; color:var(--ufv-primary); background:none; border:0; padding:6px 0; cursor:pointer; display:inline-flex; align-items:center; gap:7px}
@@ -62,7 +62,7 @@ body.modal-open{overflow:hidden}
 
   <section class="recursos">
     <div class="container">
-      <p class="intro">Pulsa en cada píldora para ver su vídeo.</p>
+      <p class="intro">Diez vídeos breves con casos de uso docente de la IA. Pulsa en cada píldora para verla.</p>
       <div class="grid-pild" id="pildoras"></div>
     </div>
   </section>
@@ -100,17 +100,19 @@ document.querySelectorAll('[data-enlace]').forEach(a => {
    - titulo: si está vacío, la tarjeta aparece como «Próximamente».
    - descripcion: opcional, una línea bajo el título.
    - video: dirección (src) del iframe (Kaltura, Educamedia, YouTube…).
+   - enlace: si el vídeo no se puede incrustar, enlace a su web (se abre en pestaña nueva).
    ============================================================ */
 const PILDORAS = [
-  { titulo:"", descripcion:"", video:"" },
-  { titulo:"", descripcion:"", video:"" },
-  { titulo:"", descripcion:"", video:"" },
-  { titulo:"", descripcion:"", video:"" },
-  { titulo:"", descripcion:"", video:"" },
-  { titulo:"", descripcion:"", video:"" },
-  { titulo:"", descripcion:"", video:"" },
-  { titulo:"", descripcion:"", video:"" },
-  { titulo:"", descripcion:"", video:"" }
+  { titulo:"Generación de vídeo para el aprendizaje con NotebookLM", descripcion:"", video:"https://www.youtube-nocookie.com/embed/xT7Zszd4cLs", enlace:"" },
+  { titulo:"Generación de recursos con NotebookLM", descripcion:"Universidad de Sevilla", video:"", enlace:"https://tv.us.es/media/DOCENCIA+Y+APRENDIZAJE+CON+INTELIGENCIA+ARTIFICIAL:+NOTEBOOKLM+PARA+DOCENTES/1_lhhiba6k" },
+  { titulo:"Uso de Canvas de Gemini y creación de Gems como asistente", descripcion:"Universidad de Sevilla", video:"", enlace:"https://tv.us.es/media/DOCENCIA+Y+APRENDIZAJE+CON+INTELIGENCIA+ARTIFICIAL:+GEMINI+PARA+DOCENTES/1_wvcg7o5p/216854503" },
+  { titulo:"Feedback con Gemini", descripcion:"", video:"https://www.youtube-nocookie.com/embed/3h3ubVn_UhQ", enlace:"" },
+  { titulo:"Análisis crítico de los documentos para tus alumnos: «El criticador»", descripcion:"", video:"https://www.youtube-nocookie.com/embed/1XtgpdX-Ajs", enlace:"" },
+  { titulo:"Detective de aprendizajes críticos en tus alumnos", descripcion:"", video:"https://www.youtube-nocookie.com/embed/iLNnDlbOD_Y", enlace:"" },
+  { titulo:"Creación de casos actuales", descripcion:"", video:"https://www.youtube-nocookie.com/embed/WCMq3ioHUSY", enlace:"" },
+  { titulo:"Creación de un simulador interactivo para alumnos", descripcion:"", video:"https://www.youtube-nocookie.com/embed/3-X5si3VuU0", enlace:"" },
+  { titulo:"Pensamiento crítico en la revisión de materiales creados con IA", descripcion:"", video:"https://www.youtube-nocookie.com/embed/0el1ihz1GJo", enlace:"" },
+  { titulo:"Tutor socrático", descripcion:"", video:"https://www.youtube-nocookie.com/embed/WfC2tna6kA4", enlace:"" }
 ];
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
@@ -143,7 +145,9 @@ function mostrar(i) {
   document.getElementById('pv-desc').hidden = !p.descripcion;
   document.getElementById('pv-video').innerHTML = p.video
     ? '<iframe src="' + esc(p.video) + '" title="' + esc(p.titulo) + '" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay *; fullscreen *; encrypted-media *; picture-in-picture"></iframe>'
-    : '<div class="video-soon">' + PLAY_ICO + '<span>Vídeo próximamente</span></div>';
+    : p.enlace
+      ? '<div class="video-soon">' + PLAY_ICO + '<span>Este vídeo se reproduce en la web ' + (p.descripcion ? 'de la ' + esc(p.descripcion) : 'de origen') + '</span><a class="btn accent" href="' + esc(p.enlace) + '" target="_blank" rel="noopener">Ver el vídeo ' + LINK_ICO + '</a></div>'
+      : '<div class="video-soon">' + PLAY_ICO + '<span>Vídeo próximamente</span></div>';
   const k = disponibles.indexOf(i);
   document.getElementById('pv-prev').disabled = k <= 0;
   document.getElementById('pv-next').disabled = k < 0 || k >= disponibles.length - 1;
