@@ -104,8 +104,8 @@ document.querySelectorAll('[data-enlace]').forEach(a => {
    ============================================================ */
 const PILDORAS = [
   { titulo:"Generación de vídeo para el aprendizaje con NotebookLM", descripcion:"", video:"https://www.youtube-nocookie.com/embed/xT7Zszd4cLs", enlace:"" },
-  { titulo:"Generación de recursos con NotebookLM", descripcion:"Universidad de Sevilla", video:"", enlace:"https://tv.us.es/media/DOCENCIA+Y+APRENDIZAJE+CON+INTELIGENCIA+ARTIFICIAL:+NOTEBOOKLM+PARA+DOCENTES/1_lhhiba6k" },
-  { titulo:"Uso de Canvas de Gemini y creación de Gems como asistente", descripcion:"Universidad de Sevilla", video:"", enlace:"https://tv.us.es/media/DOCENCIA+Y+APRENDIZAJE+CON+INTELIGENCIA+ARTIFICIAL:+GEMINI+PARA+DOCENTES/1_wvcg7o5p/216854503" },
+  { titulo:"Generación de recursos con NotebookLM", descripcion:"Universidad de Sevilla", video:"https://tv.us.es/embed/secure/iframe/entryId/1_lhhiba6k/uiConfId/48213293/st/0", enlace:"https://tv.us.es/media/DOCENCIA+Y+APRENDIZAJE+CON+INTELIGENCIA+ARTIFICIAL:+NOTEBOOKLM+PARA+DOCENTES/1_lhhiba6k" },
+  { titulo:"Uso de Canvas de Gemini y creación de Gems como asistente", descripcion:"Universidad de Sevilla", video:"https://tv.us.es/embed/secure/iframe/entryId/1_wvcg7o5p/uiConfId/48213293/st/0", enlace:"https://tv.us.es/media/DOCENCIA+Y+APRENDIZAJE+CON+INTELIGENCIA+ARTIFICIAL:+GEMINI+PARA+DOCENTES/1_wvcg7o5p/216854503" },
   { titulo:"Feedback con Gemini", descripcion:"", video:"https://www.youtube-nocookie.com/embed/3h3ubVn_UhQ", enlace:"" },
   { titulo:"Análisis crítico de los documentos para tus alumnos: «El criticador»", descripcion:"", video:"https://www.youtube-nocookie.com/embed/1XtgpdX-Ajs", enlace:"" },
   { titulo:"Detective de aprendizajes críticos en tus alumnos", descripcion:"", video:"https://www.youtube-nocookie.com/embed/iLNnDlbOD_Y", enlace:"" },
@@ -144,7 +144,7 @@ function mostrar(i) {
   document.getElementById('pv-desc').textContent = p.descripcion || '';
   document.getElementById('pv-desc').hidden = !p.descripcion;
   document.getElementById('pv-video').innerHTML = p.video
-    ? '<iframe src="' + esc(p.video) + '" title="' + esc(p.titulo) + '" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay *; fullscreen *; encrypted-media *; picture-in-picture"></iframe>'
+    ? '<iframe src="' + esc(p.video) + '" title="' + esc(p.titulo) + '" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay *; fullscreen *; encrypted-media *; picture-in-picture" referrerpolicy="no-referrer-when-downgrade"></iframe>'
     : p.enlace
       ? '<div class="video-soon">' + PLAY_ICO + '<span>Este vídeo se reproduce en la web ' + (p.descripcion ? 'de la ' + esc(p.descripcion) : 'de origen') + '</span><a class="btn accent" href="' + esc(p.enlace) + '" target="_blank" rel="noopener">Ver el vídeo ' + LINK_ICO + '</a></div>'
       : '<div class="video-soon">' + PLAY_ICO + '<span>Vídeo próximamente</span></div>';
