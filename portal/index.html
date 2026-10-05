@@ -15,7 +15,7 @@
 <style>
 /* Portal de entrada: vídeo de introducción + dos programas */
 .portal{padding-block:34px 46px}
-.portal .intro{color:var(--fg); font-size:1rem; line-height:1.65; max-width:none; margin:0 0 22px}
+.portal .intro{color:var(--fg); font-size:1rem; line-height:1.65; max-width:none; margin:0 0 30px}
 .video-cta{display:flex; align-items:center; gap:20px; padding:18px 22px; margin:0 0 34px; border:1px solid var(--line); border-radius:var(--radius);
   background:var(--card); text-decoration:none; color:inherit; transition:transform .2s,border-color .2s,box-shadow .2s,background .2s}
 .video-cta:hover{transform:translateY(-3px); border-color:var(--ufv-sky); background:var(--card-hover); box-shadow:var(--shadow-card)}
@@ -63,15 +63,6 @@
     <div class="container">
       <p class="intro">Desde aquí podrás acceder a estos dos programas formativos que, aunque separados, están muy relacionados, lo que te permitirá adquirir una formación muy completa y adaptada a tus necesidades.</p>
 
-      <a class="video-cta" href="#" data-enlace="video" target="_blank" rel="noopener">
-        <span class="play-ring" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
-        <span class="vc-text">
-          <span class="vc-title">Vídeo de introducción</span>
-          <span class="vc-desc">Te invitamos a ver el vídeo de introducción donde te explicamos detenidamente en qué consiste este proyecto formativo.</span>
-        </span>
-        <span class="rec-link">Ver vídeo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
       <div class="prog-head"><p class="eyebrow">Programas formativos</p></div>
       <div class="prog-grid">
         <a class="prog" href="#" data-enlace="ia">
@@ -92,9 +83,8 @@
 </main>
 
 <script>
-/* ENLACES · las páginas de Canvas se abren en la ventana completa; el vídeo, en una pestaña nueva */
+/* ENLACES · las páginas de Canvas se abren en la ventana completa */
 const ENLACES = {
-  "video": "https://www.kaltura.com/index.php/extwidget/preview/partner_id/2615412/uiconf_id/54497012/entry_id/1_95l9u1rq/embed/dynamic",  // Vídeo de introducción
   "ia":    "https://ufv-es.instructure.com/courses/44179/pages/portal-ia?module_item_id=1539063",  // Portal de IA
   "cdd":   "https://ufv-es.instructure.com/courses/44179/pages/portal-de-cdd"  // Portal de Competencias Digitales Docentes
 };

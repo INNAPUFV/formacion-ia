@@ -4,7 +4,7 @@ Mini webs de innovación docente de la UFV para incrustar en Canvas mediante ifr
 Se publican con GitHub Pages en `https://innapufv.github.io/formacion-ia/`.
 
 ## Estructura
-- `portal/` · Página de entrada: separa el Portal de IA y el de Competencias Digitales Docentes, con vídeo de introducción.
+- `portal/` · Página de entrada: separa el Portal de IA y el de Competencias Digitales Docentes.
 - `index.html`: portada del Espacio de Formación.
 - `comprender-ia/` · 01 Comprender la IA y utilizarla con criterio
 - `herramientas-gemini/` · 02 Adopción de herramientas de Gemini
