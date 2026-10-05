@@ -16,6 +16,7 @@ Se publican con GitHub Pages en `https://innapufv.github.io/formacion-ia/`.
 - `educacion-conciencia-razon/` · Recurso del ámbito 01: conferencia de Francesc Torralba (vídeo de YouTube)
 - `red-subterrania/` · Recurso del ámbito 05: La Red SubterranIA (vídeo de Kaltura + texto)
 - `que-piensan-alumnos/` · Recurso del ámbito 05: ¿Qué piensan los alumnos sobre la IA? (tela de araña por facultad en ficha emergente + World Café)
+- `pildoras-formativas/` · Recurso del ámbito 02: Píldoras formativas (9 vídeos en ficha emergente)
 - `ciclo-instituto-newman/` · Recurso del ámbito 01: Ciclo Instituto Newman, dos sesiones (vídeos de YouTube)
 - `assets/ufv.css`: estilos compartidos (kit web UFV).
 - `assets/logo-ufv.png`: logo.
