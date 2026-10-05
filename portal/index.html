@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- No indexar en buscadores -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Portal de IA y Competencias Digitales Docentes · UFV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/ufv.css?v=202610011053">
+<style>
+/* Portal de entrada: vídeo de introducción + dos programas */
+.portal{padding-block:34px 46px}
+.portal .intro{color:var(--fg); font-size:1rem; line-height:1.65; max-width:72ch; margin:0 0 22px}
+.video-cta{display:flex; align-items:center; gap:20px; padding:18px 22px; margin:0 0 34px; border:1px solid var(--line); border-radius:var(--radius);
+  background:var(--card); text-decoration:none; color:inherit; transition:transform .2s,border-color .2s,box-shadow .2s,background .2s}
+.video-cta:hover{transform:translateY(-3px); border-color:var(--ufv-sky); background:var(--card-hover); box-shadow:var(--shadow-card)}
+.video-cta:focus-visible{outline:3px solid var(--ufv-accent); outline-offset:2px}
+.play-ring{flex:none; display:grid; place-items:center; width:64px; height:64px; border-radius:50%; background:var(--ufv-secondary); box-shadow:0 0 0 6px #eef3fa}
+.play-ring svg{width:26px; height:26px; fill:var(--ufv-sky); margin-left:3px}
+.video-cta .vc-text{min-width:0}
+.video-cta .vc-title{display:block; font-family:var(--font-title); font-weight:500; font-size:1.2rem; color:var(--heading); margin:0 0 3px}
+.video-cta .vc-desc{display:block; font-size:.92rem; line-height:1.55; color:var(--muted)}
+.video-cta .rec-link{margin-left:auto; flex:none; padding-top:0}
+.prog-head{margin:0 0 14px}
+.prog-head .eyebrow{color:var(--ufv-accent); margin:0}
+.prog-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px}
+.prog{display:flex; flex-direction:column; padding:22px 24px; background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  text-decoration:none; color:inherit; transition:transform .2s,border-color .2s,box-shadow .2s,background .2s}
+.prog:hover{transform:translateY(-4px); border-color:var(--ufv-sky); background:var(--card-hover); box-shadow:var(--shadow-card)}
+.prog:focus-visible{outline:3px solid var(--ufv-accent); outline-offset:2px}
+.prog .tag{align-self:flex-start; margin:0 0 12px; padding:3px 11px; border-radius:999px; border:1.5px solid var(--ufv-accent); color:var(--ufv-accent);
+  font-family:var(--font-slab); font-size:.7rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase}
+.prog .tag.ghost{visibility:hidden}
+.prog h2{margin:0 0 8px; font-family:var(--font-title); font-weight:500; font-size:1.4rem; line-height:1.2; color:var(--heading)}
+.prog p{margin:0 0 16px; font-size:.92rem; line-height:1.55; color:var(--muted)}
+.prog .rec-link{margin-top:auto}
+.prog:hover .rec-link, .video-cta:hover .rec-link{color:var(--ufv-sky)}
+.prog:hover .rec-link svg, .video-cta:hover .rec-link svg{transform:translateX(3px)}
+@media (max-width:620px){
+  .prog-grid{grid-template-columns:1fr}
+  .prog .tag.ghost{display:none}
+  .video-cta{flex-wrap:wrap}
+  .video-cta .rec-link{margin-left:0}
+}
+</style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Formación docente · UFV</p>
+      <h1>Portal de IA y Competencias Digitales Docentes</h1>
+      <p class="sub">Te damos la bienvenida al portal de inteligencia artificial y competencias digitales docentes de la UFV.</p>
+    </div>
+  </section>
+
+  <section class="portal">
+    <div class="container">
+      <p class="intro">Desde aquí podrás acceder a estos dos programas formativos que, aunque separados, están muy relacionados, lo que te permitirá adquirir una formación muy completa y adaptada a tus necesidades.</p>
+
+      <a class="video-cta" href="#" data-enlace="video" target="_blank" rel="noopener">
+        <span class="play-ring" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+        <span class="vc-text">
+          <span class="vc-title">Vídeo de introducción</span>
+          <span class="vc-desc">Te invitamos a ver el vídeo de introducción donde te explicamos detenidamente en qué consiste este proyecto formativo.</span>
+        </span>
+        <span class="rec-link">Ver vídeo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <div class="prog-head"><p class="eyebrow">Programas formativos</p></div>
+      <div class="prog-grid">
+        <a class="prog" href="#" data-enlace="ia">
+          <span class="tag">Obligatorio</span>
+          <h2>Inteligencia Artificial · 2.ª ed.</h2>
+          <p>Espacio de Formación Permanente en IA para docentes.</p>
+          <span class="rec-link">Entrar <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="prog" href="#" data-enlace="cdd">
+          <span class="tag ghost" aria-hidden="true">·</span>
+          <h2>Competencias Digitales Docentes</h2>
+          <p>Programa de formación en competencias digitales para el profesorado.</p>
+          <span class="rec-link">Entrar <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+/* ENLACES · las páginas de Canvas se abren en la ventana completa; el vídeo, en una pestaña nueva */
+const ENLACES = {
+  "video": "https://www.kaltura.com/index.php/extwidget/preview/partner_id/2615412/uiconf_id/54497012/entry_id/1_95l9u1rq/embed/dynamic",  // Vídeo de introducción
+  "ia":    "https://ufv-es.instructure.com/courses/44179/pages/portal-ia?module_item_id=1539063",  // Portal de IA
+  "cdd":   "https://ufv-es.instructure.com/courses/44179/pages/portal-de-cdd"  // Portal de Competencias Digitales Docentes
+};
+document.querySelectorAll('[data-enlace]').forEach(a => {
+  const url = ENLACES[a.dataset.enlace];
+  if (!url) return;
+  a.href = url;
+  if (/instructure\.com/.test(url)) a.target = "_top";
+});
+</script>
+</body>
+</html>
