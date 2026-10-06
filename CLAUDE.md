@@ -13,7 +13,7 @@ Publicación: GitHub Pages → `https://innapufv.github.io/formacion-ia/<carpeta
 - Tarjetas: modelo numerado (número en Playfair 600 con subrayado celeste 3px, título Playfair 500, enlace «Ver… →»), sin filete lateral. Frambuesa (#cf2359) solo para etiquetas/antetítulos; azul para la estructura.
 - Fichas emergentes (modal) con el modelo del catálogo de herramientas: cabecera azul noche, cuerpo blanco; al cerrar se detiene el vídeo.
 - Vídeos: YouTube como `youtube-nocookie.com/embed/ID`; Kaltura UFV público `https://cdnapisec.kaltura.com/p/2615412/embedPlaykitJs/uiconf_id/54497012?iframeembed=true&entry_id=…&config…widgetId…`; los enlaces `external_tools/retrieve` de Canvas NO funcionan fuera de Canvas.
-- PDFs de Canvas: quitar `/download?download_frd=1` y dejar `?verifier=…` para que se vean en el visor sin descarga.
+- PDFs de Canvas: enlazar siempre como `https://ufv-es.instructure.com/courses/44179/files/ID` (abre el visor directo, sin verifier, que caduca si se resube el archivo). Sacar el ID de cualquier enlace que pase la usuaria (`?preview=ID`, `/files/ID/download…`). Nunca el enlace de carpeta con `?preview=` (muestra antes el listado). El archivo debe estar publicado para los alumnos.
 - Altura del iframe: medir la página a 820 px de ancho y redondear hacia arriba (+30 px). Dar siempre el iframe con `?v=N` cuando haya que forzar la recarga.
 - Antes de subir, previsualizar como artefacto (CSS en línea, vídeos sustituidos por un recuadro) cuando la usuaria lo pida.
 - Commits en español; la usuaria trabaja en Windows (recargar con Ctrl+F5).
