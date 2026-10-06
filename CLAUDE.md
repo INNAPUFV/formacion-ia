@@ -25,7 +25,7 @@ Publicación: GitHub Pages → `https://innapufv.github.io/formacion-ia/<carpeta
 | `index.html` | Portada «Espacio de Formación Permanente en IA» (5 ámbitos + banner de ayuda a Teams) | pages/portal-ia |
 | `comprender-ia/` | 01 Comprender la IA y utilizarla con criterio | pages/01-comprender-la-ia-y-utilizarla-con-criterio |
 | `herramientas-gemini/` | 02 Adopción de herramientas de Gemini | pages/02-adopcion-de-herramientas-de-gemini |
-| `experiencias-uso/` | 03 Explorar experiencias de uso UFV con Gemini (6 experiencias, datos en `const EXPERIENCIAS`) | pages/06-explorar-experiencias-de-uso |
+| `experiencias-uso/` | 03 Explorar experiencias de uso UFV con Gemini (5 experiencias, datos en `const EXPERIENCIAS`; iframe 1250) | pages/06-explorar-experiencias-de-uso |
 | `evaluacion-ia/` | 04 Guía «La evaluación UFV en tiempos de IA» (archivo de la usuaria, integrado tal cual; iframe 9000) | pages/04-evaluacion-ufv-en-tiempos-de-ia |
 | `acompanar-alumnos/` | 05 Acompañar a mis alumnos | pages/05-acompanar-a-los-alumnos |
 | `ia-is-in-the-air/` | Ciclo de webinars (3 vídeos Kaltura en pestañas) | pages/ciclo-ia-is-in-the-air |
@@ -33,7 +33,7 @@ Publicación: GitHub Pages → `https://innapufv.github.io/formacion-ia/<carpeta
 | `educacion-conciencia-razon/` | Conferencia Francesc Torralba (YouTube) | pages/educacion-universitaria-conciencia-y-razon-en-tiempos-de-inteligencia-artificial |
 | `ciclo-instituto-newman/` | Instituto John Henry Newman (2 vídeos YouTube) | pages/ciclo-instituto-newman |
 | `red-subterrania/` | La Red SubterranIA (vídeo Kaltura + texto) | pages/la-red-subterrania |
-| `que-piensan-alumnos/` | ¿Qué piensan los alumnos? (telas de araña por facultad en modal + World Café pendiente) | pages/que-piensan-los-alumnos-sobre-la-ia |
+| `que-piensan-alumnos/` | ¿Qué piensan los alumnos? (telas de araña por facultad en modal + World Café → vista previa en Canvas) | pages/que-piensan-los-alumnos-sobre-la-ia |
 | `pildoras-formativas/` | Píldoras formativas (10 vídeos en modal, datos en `const PILDORAS`) | pages/pildoras-formativas |
 
 Páginas de ámbito 01–05: enlace «← Volver» (hero y pie) a `pages/portal-ia?module_item_id=1539063`.
