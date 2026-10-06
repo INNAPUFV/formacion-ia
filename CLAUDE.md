@@ -36,4 +36,7 @@ Publicación: GitHub Pages → `https://innapufv.github.io/formacion-ia/<carpeta
 | `que-piensan-alumnos/` | ¿Qué piensan los alumnos? (telas de araña por facultad en modal + World Café → vista previa en Canvas) | pages/que-piensan-los-alumnos-sobre-la-ia |
 | `pildoras-formativas/` | Píldoras formativas (10 vídeos en modal, datos en `const PILDORAS`) | pages/pildoras-formativas |
 
+**`evaluacion-ia/` NO SE TOCA**: es la misma guía del proyecto, ya integrada y compilada con las imágenes incrustadas.
+La página de Canvas «Formación para diseñar actividades y experiencias de aprendizaje» queda fuera del portal (sin tarjeta en ningún sitio). La arquitectura actual es la definitiva.
+
 Páginas de ámbito 01–05: enlace «← Volver» (hero y pie) a `pages/portal-ia?module_item_id=1539063`.
