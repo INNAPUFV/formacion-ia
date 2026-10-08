@@ -39,4 +39,13 @@ Publicación: GitHub Pages → `https://innapufv.github.io/formacion-ia/<carpeta
 **`evaluacion-ia/` NO SE TOCA**: es la misma guía del proyecto, ya integrada y compilada con las imágenes incrustadas.
 La página de Canvas «Formación para diseñar actividades y experiencias de aprendizaje» queda fuera del portal (sin tarjeta en ningún sitio). La arquitectura actual es la definitiva.
 
+## Comunicaciones (fuera del portal)
+Carpeta `comunicaciones/`: piezas sueltas que no se enlazan desde el portal. Cada comunicación en su subcarpeta con dos versiones:
+- `index.html` → anuncio de Canvas por iframe (mismas normas que el portal: sin logo ni pie, `ufv.css`, `ENLACES`, no indexable).
+- `correo.html` → correo para Outlook (tablas, estilos en línea, 600 px, logo incrustado en base64). No usa `ufv.css`.
+
+| Carpeta | Pieza | iframe |
+|---|---|---|
+| `comunicaciones/gemini-alumnos/` | Licencias de Gemini y Gemini Notebook para alumnos (oct. 2026) | 1760 |
+
 Páginas de ámbito 01–05: enlace «← Volver» (hero y pie) a `pages/portal-ia?module_item_id=1539063`.
