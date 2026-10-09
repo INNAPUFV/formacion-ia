@@ -7,7 +7,7 @@ Publicación: GitHub Pages → `https://innapufv.github.io/formacion-ia/<carpeta
 - **Estilo UFV** (guía en el proyecto «Avance en IA para el modelo formativo» → `claude/Guía de estilo web UFV.md`). Si una maqueta o imagen se aparta del estilo, **prima el estilo**: de la imagen se toman contenido y estructura.
 - Siempre en claro. Sin cabecera con logo ni pie: cada página empieza en el hero (azul noche con anillos).
 - Formato compacto para el ancho de Canvas (800–1000 px).
-- **Siempre no indexable**: `<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">` (+ googlebot, bingbot).
+- **Siempre no indexable, TODOS los .html sin excepción** (también los correos de `comunicaciones/`): `<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">` (+ googlebot, bingbot). Comprobarlo antes de cada subida.
 - Hoja de estilos compartida `assets/ufv.css`. **Cada vez que cambie, actualizar `?v=AAAAMMDDHHMM`** en el enlace de todas las páginas (caché de GitHub Pages: 10 min).
 - Enlaces: se configuran en el bloque `const ENLACES = {...}` de cada página. Páginas de Canvas → `target="_top"`; externas → `_blank`. Vacío = la tarjeta no navega («Próximamente»).
 - Tarjetas: modelo numerado (número en Playfair 600 con subrayado celeste 3px, título Playfair 500, enlace «Ver… →»), sin filete lateral. Frambuesa (#cf2359) solo para etiquetas/antetítulos; azul para la estructura.
