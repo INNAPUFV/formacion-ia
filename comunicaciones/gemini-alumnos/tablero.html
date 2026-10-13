@@ -27,15 +27,15 @@
   /* Banner: ocupa siempre el alto del iframe */
   .banner{position:relative; overflow:hidden; height:100%; border-radius:16px; color:#fff;
     background:linear-gradient(135deg,#001a33 0%,#002a52 55%,#003865 100%);
-    display:grid; grid-template-columns:1fr auto; grid-template-rows:1fr auto; column-gap:32px;
-    padding:30px 34px 0}
+    display:grid; grid-template-columns:1fr auto; column-gap:32px;
+    padding:28px 34px}
   /* Anillos concéntricos */
   .banner::before{content:""; position:absolute; top:-170px; right:-130px; width:440px; height:440px; border-radius:50%;
     border:1px solid rgba(100,158,255,.26);
     box-shadow:0 0 0 60px rgba(100,158,255,.05),0 0 0 120px rgba(100,158,255,.035),0 0 0 180px rgba(100,158,255,.025)}
   .banner > *{position:relative; z-index:1}
 
-  .texto{align-self:center; min-width:0; padding-bottom:22px}
+  .texto{align-self:center; min-width:0}
   .eyebrow{margin:0 0 10px; font-family:var(--slab); font-weight:700; font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; color:var(--sky)}
   h1{margin:0 0 12px; font-family:var(--title); font-weight:500; font-size:2.05rem; line-height:1.1; letter-spacing:-.01em; text-wrap:balance}
   h1 em{font-style:normal; color:var(--sky)}
@@ -44,7 +44,7 @@
   .sub strong{color:#fff}
 
   /* Acciones */
-  .acciones{align-self:center; display:flex; flex-direction:column; gap:10px; padding-bottom:22px; width:250px}
+  .acciones{align-self:center; display:flex; flex-direction:column; gap:10px; width:250px}
   .acc{display:flex; align-items:center; gap:12px; padding:11px 16px 11px 12px; border-radius:999px; text-decoration:none;
     font-weight:700; font-size:.92rem; line-height:1.15; color:var(--night); background:#fff; transition:background .18s,transform .18s}
   .acc:hover{background:#eef3fa; transform:translateX(3px)}
@@ -57,39 +57,27 @@
   .acc small{display:block; font-weight:400; font-size:.74rem; opacity:.75; margin-top:2px}
   .acc .flecha{flex:none; width:15px; height:15px}
 
-  /* Franja inferior: curso */
-  .franja{grid-column:1 / -1; display:flex; align-items:center; gap:14px; margin:0 -34px; padding:12px 34px;
-    background:rgba(0,10,25,.38); border-top:1px solid rgba(100,158,255,.22); font-size:.9rem; line-height:1.35; color:var(--on-dark)}
-  .fecha{flex:none; display:flex; align-items:baseline; gap:5px; padding:5px 11px; border-radius:8px; background:#fff}
-  .fecha b{font-family:var(--title); font-weight:600; font-size:1.15rem; line-height:1; color:var(--primary)}
-  .fecha span{font-family:var(--slab); font-weight:700; font-size:.68rem; letter-spacing:.08em; color:var(--accent)}
-  .franja strong{color:#fff; font-weight:700}
-  .corto{display:none}
 
   /* Tablet */
   @media (max-width:720px){
-    .banner{column-gap:22px; padding:24px 24px 0}
-    .franja{margin:0 -24px; padding:11px 24px}
+    .banner{column-gap:22px; padding:24px}
     h1{font-size:1.7rem}
     .acciones{width:210px}
     .acc small{display:none}
   }
   /* Móvil: una columna, botones en fila */
   @media (max-width:560px){
-    .banner{grid-template-columns:1fr; grid-template-rows:1fr auto auto; padding:20px 18px 0}
+    .banner{grid-template-columns:1fr; grid-template-rows:1fr auto; padding:20px 18px}
     .banner::before{width:300px; height:300px; top:-150px; right:-140px}
-    .texto{padding-bottom:14px}
+    .texto{padding-bottom:14px; align-self:start}
     .eyebrow{font-size:.66rem; margin-bottom:8px}
     h1{font-size:1.38rem; margin-bottom:8px}
     .raya{display:none}
     .sub{font-size:.85rem}
-    .acciones{flex-direction:row; width:auto; gap:8px; padding-bottom:14px}
+    .acciones{flex-direction:row; width:auto; gap:8px}
     .acc{flex:1; flex-direction:column; gap:6px; padding:10px 4px; border-radius:14px; text-align:center; font-size:.76rem}
     .acc:hover{transform:none}
     .acc .flecha{display:none}
-    .franja{margin:0 -18px; padding:9px 18px; font-size:.78rem; gap:10px}
-    .franja .largo{display:none}
-    .corto{display:inline}
   }
   @media (prefers-reduced-motion:reduce){.acc{transition:none} .acc:hover{transform:none}}
 </style>
@@ -97,10 +85,9 @@
 <body>
 <main class="banner">
   <div class="texto">
-    <p class="eyebrow">UFV · Novedad para alumnos</p>
-    <h1>Ya tenéis <em>Gemini</em> y <em>Gemini Notebook</em></h1>
+    <h1>Ya tienes <em>Gemini</em> y <em>Gemini Notebook</em></h1>
     <div class="raya" aria-hidden="true"></div>
-    <p class="sub">Con Nano Banana y Deep Research. Entrad siempre con vuestra <strong>cuenta de correo de la UFV</strong>.</p>
+    <p class="sub">Con Nano Banana y Deep Research. Entra siempre con tu <strong>cuenta de correo de la UFV</strong>.</p>
   </div>
 
   <nav class="acciones" aria-label="Accesos">
@@ -121,10 +108,6 @@
     </a>
   </nav>
 
-  <p class="franja">
-    <span class="fecha"><b>20</b><span>OCT</span></span>
-    <span><strong>La red SubterranIA</strong><span class="largo">: curso online de alfabetización en IA para alumnos de grado y FP de grado superior</span><span class="corto">, curso online de alfabetización en IA</span>.</span>
-  </p>
 </main>
 
 <script>
