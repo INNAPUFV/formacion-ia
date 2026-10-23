@@ -49,4 +49,11 @@ Carpeta `comunicaciones/`: piezas sueltas que no se enlazan desde el portal. Cad
 |---|---|---|
 | `comunicaciones/gemini-alumnos/` | Licencias de Gemini y Gemini Notebook para alumnos (oct. 2026) | anuncio 1760 · tablero 280 |
 
+## Contenidos multimedia (fuera del portal)
+Carpeta `contenidos-multimedia-canvas/`: recursos didácticos interactivos para insertar en cualquier curso de Canvas por iframe. No se enlazan desde el portal. Son piezas autónomas (no usan `ufv.css`; fuentes UFV desde Google Fonts), siempre no indexables.
+
+| Carpeta | Pieza | iframe |
+|---|---|---|
+| `contenidos-multimedia-canvas/principios-animacion/` | Los 12 principios de la animación con una pelota de baloncesto (reproductor en canvas JS con capítulos, fotograma a fotograma y 0,25×; incluye el MP4 descargable) | 600 |
+
 Páginas de ámbito 01–05: enlace «← Volver» (hero y pie) a `pages/portal-ia?module_item_id=1539063`.
