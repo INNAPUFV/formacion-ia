@@ -40,7 +40,7 @@ Publicación: GitHub Pages → `https://innapufv.github.io/formacion-ia/<carpeta
 La página de Canvas «Formación para diseñar actividades y experiencias de aprendizaje» queda fuera del portal (sin tarjeta en ningún sitio). La arquitectura actual es la definitiva.
 
 ## Comunicaciones (fuera del portal)
-Carpeta `comunicaciones/`: piezas sueltas que no se enlazan desde el portal. Cada comunicación en su subcarpeta con dos versiones:
+Carpeta `comunicaciones/`: piezas sueltas que no se enlazan desde el portal. **Duplicada en `INNAPUFV/laboratorio-canvas`** (repositorio de experimentación de Narrativa I): el anuncio de Gemini se publica en las dos direcciones; cualquier cambio se aplica en ambos repositorios. Cada comunicación en su subcarpeta con dos versiones:
 - `index.html` → anuncio de Canvas por iframe (mismas normas que el portal: sin logo ni pie, `ufv.css`, `ENLACES`, no indexable).
 - `tablero.html` (opcional) → banner compacto para el tablero de Canvas: ocupa el 100 % del alto del iframe y cabe en 280 px de 320 a 1000 px de ancho.
 - `correo.html` → correo para Outlook (tablas, estilos en línea, 600 px, logo incrustado en base64). No usa `ufv.css`.
@@ -49,11 +49,6 @@ Carpeta `comunicaciones/`: piezas sueltas que no se enlazan desde el portal. Cad
 |---|---|---|
 | `comunicaciones/gemini-alumnos/` | Licencias de Gemini y Gemini Notebook para alumnos (oct. 2026) | anuncio 1760 · tablero 280 |
 
-## Contenidos multimedia (fuera del portal)
-Carpeta `contenidos-multimedia-canvas/`: recursos didácticos interactivos para insertar en cualquier curso de Canvas por iframe. No se enlazan desde el portal. Son piezas autónomas (no usan `ufv.css`; fuentes UFV desde Google Fonts), siempre no indexables.
-
-| Carpeta | Pieza | iframe |
-|---|---|---|
-| `contenidos-multimedia-canvas/principios-animacion/` | Los 12 principios de la animación con una pelota de baloncesto (reproductor en canvas JS con capítulos, fotograma a fotograma y 0,25×; incluye el MP4 descargable) | 600 |
+Los recursos multimedia (p. ej. los 12 principios de la animación) viven solo en `INNAPUFV/laboratorio-canvas`, no aquí.
 
 Páginas de ámbito 01–05: enlace «← Volver» (hero y pie) a `pages/portal-ia?module_item_id=1539063`.
